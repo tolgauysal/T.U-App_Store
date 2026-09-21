@@ -108,11 +108,42 @@ function openAddAppModal() {
 function closeAddAppModal() { const modal = document.getElementById('addAppModal'); if (!modal) return; modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
 
 async function loadApps() {
+    const basePath = getSiteBasePath();
+    const staticAppFiles = [
+        `${basePath}/db/apps/app_3.json`,
+        `${basePath}/db/apps/app_4.json`
+    ];
+
+    try {
+        const apps = [];
+        for (const fileUrl of staticAppFiles) {
+            const res = await fetch(fileUrl, { cache: 'no-store' });
+            if (!res.ok) continue;
+            const data = await res.json();
+            if (Array.isArray(data)) {
+                apps.push(...data);
+            } else if (data && data.id) {
+                apps.push(data);
+            } else if (data && Array.isArray(data.apps)) {
+                apps.push(...data.apps);
+            }
+        }
+
+        if (apps.length) {
+            renderApps(apps);
+            return;
+        }
+    } catch (e) {
+        console.warn('Static app catalog could not be loaded:', e);
+    }
+
     try {
         const res = await fetch('http://localhost:3000/api/apps');
         const data = await res.json();
         if (data.success) renderApps(data.apps || []);
-    } catch (e) { console.error(e); }
+    } catch (e) {
+        console.error(e);
+    }
 }
 
 function renderApps(apps) {
