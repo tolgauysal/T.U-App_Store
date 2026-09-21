@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giriş Yap - T.U App Store</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('../img/welcome-image.svg') no-repeat center center fixed;
+      background-size: cover;
+      color: #f8fafc;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      width: min(100%, 420px);
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+    }
+    h1 { margin-top: 0; margin-bottom: 8px; font-size: 28px; }
+    p { margin-top: 0; color: #dbeafe; }
+    label { display: block; margin-top: 14px; margin-bottom: 6px; font-weight: 600; }
+    input {
+      width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); outline: none;
+      background: rgba(15,23,42,0.55); color: #fff;
+    }
+    button {
+      width: 100%; margin-top: 18px; border: none; border-radius: 10px; padding: 12px 14px; cursor: pointer;
+      background: linear-gradient(90deg, #22c55e, #16a34a); color: white; font-weight: 700;
+    }
+    .link { margin-top: 14px; text-align: center; }
+    .link a { color: #bfdbfe; text-decoration: none; }
+    .hint { font-size: 13px; color: #dbeafe; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Giriş Yap</h1>
+    <p>T.U App Store hesabına giriş yapın.</p>
+    <form onsubmit="return girisYap(event)">
+      <label for="email">E-posta</label>
+      <input id="email" type="email" placeholder="ornek@eposta.com" required />
+      <label for="password">Parola</label>
+      <input id="password" type="password" placeholder="••••••••" required />
+      <button type="submit">Giriş Yap</button>
+    </form>
+    <div class="hint">Demo amaçlı: herhangi bir e-posta/parola ile giriş yapılabilir.</div>
+    <div class="link"><a href="Kayıt Ol.html">Hesabınız yok mu? Kayıt olun</a></div>
+    <div class="link"><a href="../index.html">Anasayfaya dön</a></div>
+  </div>
+  <img src="../img/welcome-image.svg" alt="Welcome Image" style="display:none;" />
+  <script>
+    function girisYap(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      if (!email || !password) return false;
+      localStorage.setItem('aktifKullanici', email.split('@')[0]);
+      window.location.href = '../index.html';
+      return false;
+    }
+  </script>
+</body>
+</html>

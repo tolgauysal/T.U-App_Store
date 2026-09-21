@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <!-- Temel Meta Etiketleri -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title id="siteTitle">T.U App Store - En Yeni Uygulama ve Oyunlar</title>
+    
+    <!-- SEO Meta Etiketleri -->
+    <meta name="description" content="T.U App Store ile geliştirilen en yeni, güçlü ve eğlenceli dijital uygulamaları ve oyunları keşfedin.">
+    <meta name="keywords" content="app store, uygulama indir, oyun indir, dijital mağaza, teknoloji, yazılım, t.u store">
+    <meta name="author" content="Tolga Uysal">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Open Graph (Sosyal Medya) Meta Etiketleri -->
+    <meta property="og:title" content="T.U App Store - Dijital Uygulama Dünyası">
+    <meta property="og:description" content="En yeni ve en güçlü dijital uygulamaları hemen keşfedin!">
+    <meta property="og:image" content="img/welcome-image.svg">
+    <meta property="og:url" content="https://github.com/tolgauysal">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="T.U App Store">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter/X Kart Meta Etiketleri -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="T.U App Store - Dijital Uygulama Dünyası">
+    <meta name="twitter:description" content="En yeni ve en güçlü dijital uygulamaları hemen keşfedin!">
+    <meta name="twitter:image" content="img/welcome-image.svg">
+
+    <!-- Mobil Tarayıcı Renk Teması -->
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Güvenlik Politikası -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content;">
+
+    <!-- CDN Bağlantı İpuçları (Resource Hints) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Stil Dosyaları -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/fonts/index_fonts.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/github-button.css">
+
+    <!-- Script Ön Yükleme / Yüklemeler -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+    <script src="./script/index.js" defer></script>
+</head>
+<body>
+
+    <!-- Üst Bilgi / Navigasyon -->
+    <header class="site-header">
+        <h1 id="logoText">T.U App Store</h1>
+        <nav class="nav-butonlar" aria-label="Ana Gezinme">
+            <a href="#uygulamalar" class="btn kayitol-btn">Uygulamaları keşfet</a>
+        </nav>
+    </header>
+
+    <!-- Ana İçerik -->
+    <main>
+        <!-- Hero / Karşılama Alanı -->
+        <section class="kahraman-alani">
+            <img src="img/welcome-image.svg" alt="T.U Store Banner" loading="eager" width="1200" height="400">
+            <div class="kahraman-maske"></div>
+            
+            <div class="arama-alani-ic">
+                <input type="search" class="arama-kutusu" placeholder="Uygulama veya oyun ara..." onkeyup="aramaYap(this.value)" aria-label="Uygulama Arama">
+            </div>
+
+            <div class="kahraman-icerik">
+                <span class="hero-badge">Yeni sürüm • Güvenli indirme</span>
+                <h2 id="welcomeHeading">Mağazaya Hoş Geldiniz</h2>
+                <p>En yeni ve en güçlü dijital uygulamaları, oyunları ve üretken araçları tek bir yerde keşfedin.</p>
+                <div class="hero-aksiyonlar">
+                    <a href="#uygulamalar" class="btn kayitol-btn">Uygulamaları İncele</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Özellikler -->
+        <section class="ozellikler-kapsayici">
+            <article class="ozellik-karti">
+                <h3>⚡ Hızlı Erişim</h3>
+                <p>İstediğiniz uygulamaları birkaç saniye içinde keşfedin.</p>
+            </article>
+            <article class="ozellik-karti">
+                <h3>🔒 Güvenli İndirme</h3>
+                <p>Her içerik güvenli ve doğrulanmış kaynaklardan sunulur.</p>
+            </article>
+            <article class="ozellik-karti">
+                <h3>🎮 Yeni İçerikler</h3>
+                <p>Güncel oyunlar, araçlar ve üretken uygulamalar düzenli olarak eklenir.</p>
+            </article>
+        </section>
+
+        <!-- Öne Çıkanlar -->
+        <section class="urun-bolumu" id="urunListesi">
+            <div class="bolum-baslik">
+                <h2>Öne Çıkan Uygulamalar</h2>
+                <p>Güncel, performanslı ve kullanıcı dostu seçenekler.</p>
+            </div>
+        </section>
+
+        <!-- Uygulama Listesi -->
+        <section class="uygulama-kapsayici" id="uygulamalar">
+            <div class="bolum-baslik">
+                <h2>Uygulamalar</h2>
+                <p>Toplanan uygulamalar listesi. Geliştirici Hesabı Oluşturduysanız uygulama ekleyebilirsiniz.</p>
+            </div>
+            <div id="uygulamaListesi" class="uygulama-izgara"></div>
+        </section>
+    </main>
+
+    <!-- Modallar -->
+
+    <!-- Uygulama Ekleme Modal -->
+    <!-- Alt Bilgi / Footer -->
+    <footer class="footer">
+        <p id="footerCopyright">&copy; 2026 T.U App Store. Tüm hakları saklıdır.</p>
+        <p class="footer-yapimci">Yapımcı: Tolga Uysal</p>
+        <nav class="footer-linkler" aria-label="Alt Bilgi Gezinmesi">
+            <a href="footer/sss.html">SSS</a>
+            <a href="footer/iletisim.html">İletişim</a>
+            <a href="footer/hakkimizda.html">Hakkımızda</a>
+            <a href="footer/kkvk.html">KVKK</a>
+            <a href="footer/gizlilik.html">Gizlilik Politikası</a>
+            <a href="footer/kullanim-kosullari.html">Kullanım Koşulları</a>
+            <a href="footer/cerez-politikasi.html">Çerez Politikası</a>
+            <a href="licence/licence.html">Lisans</a>
+            <a href="https://github.com/tolgauysal" id="githubLink" class="github-btn" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
+    </footer>
+
+    <!-- Formbutton Entegrasyon Scripti -->
+    <script>
+      window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
+      formbutton("create", {
+        action: "https://formspree.io/f/xaewjgvk",
+        title: "Nasıl yardımcı olabiliriz?",
+        fields: [
+          { 
+            type: "email", 
+            label: "E-posta:", 
+            name: "email",
+            required: true,
+            placeholder: "eposta@adresiniz.com"
+          },
+          {
+            type: "textarea",
+            label: "Mesajınız:",
+            name: "message",
+            placeholder: "Size nasıl yardımcı olabiliriz?",
+          },
+          { type: "submit", value: "Gönder" }       
+        ],
+        styles: {
+          title: { backgroundColor: "#1a1a1a" },
+          button: { backgroundColor: "#1a1a1a" }
+        }
+      });
+    </script>
+</body>
+</html>

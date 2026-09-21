@@ -1,0 +1,9 @@
+{
+  "id": "user_1",
+  "name": "Ali Veli",
+  "email": "ali.veli@example.com",
+  "bio": "Mobil geliştirici, deneme hesabı.",
+  "avatar": "https://i.pravatar.cc/150?img=3",
+  "createdAt": "2026-07-02T00:00:00.000Z",
+  "updatedAt": "2026-07-02T00:00:00.000Z"
+}

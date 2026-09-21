@@ -1,0 +1,14 @@
+{
+  "id": "app_3",
+  "title": "MyClock",
+  "description": "Android için sade ve kullanışlı saat uygulaması.",
+  "platform": "Android",
+  "status": "published",
+  "category": "Araçlar",
+  "author": "Tolga Uysal",
+  "downloadUrl": "/downloads/MyClock.apk",
+  "fileName": "MyClock.apk",
+  "logoUrl": "/img/myclock-logo.svg",
+  "price": 0,
+  "createdAt": "2026-09-19T00:00:00.000Z"
+}

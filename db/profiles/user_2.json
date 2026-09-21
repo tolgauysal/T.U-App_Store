@@ -1,0 +1,9 @@
+{
+  "id": "user_2",
+  "name": "Ayşe Demir",
+  "email": "ayse.demir@example.com",
+  "bio": "Test kullanıcısı - profil örneği.",
+  "avatar": "https://i.pravatar.cc/150?img=5",
+  "createdAt": "2026-07-02T00:00:00.000Z",
+  "updatedAt": "2026-07-02T00:00:00.000Z"
+}

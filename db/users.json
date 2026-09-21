@@ -1,0 +1,19 @@
+[
+  {
+    "id": "mr3noujt",
+    "name": "Tolga Uysal",
+    "email": "tolgauysal3535@gmail.com",
+    "password": "6cd06062f569b20b440e08b6b88ed7f97943cef17991ce5c0ae2a8073d67639d",
+    "profile": {
+      "bio": "",
+      "avatar": "",
+      "backupEmail": ""
+    },
+    "verified": false,
+    "twoFactorEnabled": false,
+    "twoFactorCodes": [],
+    "developer": false,
+    "createdAt": "2026-07-02T15:25:22.236Z",
+    "verificationCode": "323913"
+  }
+]

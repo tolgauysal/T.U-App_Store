@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">MyClock logo</title>
+  <rect width="256" height="256" rx="48" fill="#050505"/>
+  <path d="M54 72c0-17 14-30 31-30h86c17 0 31 13 31 30v84H54V72Z" fill="#0a0a0a" stroke="#fff" stroke-width="9"/>
+  <path d="M54 156h148c-3 37-34 61-74 61s-71-24-74-61Z" fill="#070707" stroke="#fff" stroke-width="9"/>
+  <circle cx="128" cy="101" r="40" fill="none" stroke="#fff" stroke-width="8"/>
+  <path d="M128 101V78m0 23 21 12M83 68l-16 17m106-17 16 17" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+</svg>

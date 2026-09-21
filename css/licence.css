@@ -1,0 +1,151 @@
+/* Genel Sayfa Ayarları */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.6;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Lisans Kapsayıcı Kutusu */
+.license-container {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    max-width: 680px;
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+}
+
+/* Başlık Alanı */
+.license-header {
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.license-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #111111;
+}
+
+.license-copyright {
+    font-size: 15px;
+    font-weight: 600;
+    color: #495057;
+    margin: 0;
+}
+
+/* Lisans Metni Gövdesi */
+.license-body {
+    font-size: 15px;
+    color: #333333;
+    text-align: justify;
+}
+
+.license-body p {
+    margin: 0 0 15px 0;
+}
+
+/* Sorumluluk Reddi (Büyük Harfli Alan) */
+.license-disclaimer {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    background-color: #f1f3f5;
+    padding: 15px;
+    border-left: 4px solid #6c757d;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-radius: 0 4px 4px 0;
+    margin-top: 20px;
+}
+
+/* Navigasyon ve Anasayfa Butonu */
+.navigation-area {
+    text-align: center;
+    width: 100%;
+    max-width: 680px;
+}
+
+.home-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 30px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+
+/* Butonun Üzerine Gelindiğinde (Hover) */
+.home-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+/* Butona Tıklandığında (Active) */
+.home-button:active {
+    transform: translateY(1px);
+}
+
+/* Mobil Ekranlar İçin Uyum Sağlama */
+@media (max-width: 576px) {
+    body {
+        padding: 20px 10px;
+    }
+    .license-container {
+        padding: 20px;
+    }
+    .license-title {
+        font-size: 22px;
+    }
+    .home-button {
+        display: block; /* Mobilde tam genişlik kaplasın */
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+.footer {
+            background-color: #ffffff;
+            color: #a0a0a0;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 13px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            margin-top: auto;
+        }
+        .footer p {
+            margin: 0 0 15px 0;
+        }
+        .footer-linkler {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .footer-linkler a {
+            color: #a0a0a0;
+            text-decoration: none;
+            background-color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            transition: all 0.2s ease;
+        }
+        .footer-linkler a:hover {
+            background-color: #ffffff;
+            color: #ffffff;
+        }
