@@ -141,7 +141,7 @@ function renderApps(apps) {
             .replace(/ç/g, 'c')
             .replace(/[^a-z0-9]+/g, '-')
             .replace(/^-|-$/g, '');
-        el.href = `/app/${slug}/${encodeURIComponent(a.id)}`;
+        el.href = `${getSiteBasePath()}/app/${slug}/${encodeURIComponent(a.id)}`;
         el.innerHTML = `
             ${a.logoUrl ? `<img class="app-logo" src="${resolveAssetUrl(a.logoUrl)}" alt="${sanitizeInput(a.title)} logosu">` : ''}
             <h3>${title}</h3>

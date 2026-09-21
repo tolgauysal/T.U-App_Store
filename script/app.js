@@ -17,6 +17,13 @@ function resolveAssetUrl(url) {
 }
 
 function getAppId() {
+    const params = new URLSearchParams(window.location.search);
+    const idFromQuery = params.get('id') || params.get('app');
+    if (idFromQuery) return decodeURIComponent(idFromQuery);
+
+    const hashId = window.location.hash.replace(/^#\/?/, '').trim();
+    if (hashId) return decodeURIComponent(hashId);
+
     const segments = window.location.pathname.split('/').filter(Boolean);
     return decodeURIComponent(segments.at(-1) || '');
 }
@@ -26,10 +33,24 @@ async function loadAppDetail() {
     const appId = getAppId();
 
     try {
-        const response = await fetch(`http://localhost:3000/api/apps`);
-        const data = await response.json();
-        const app = data.apps?.find((item) => item.id === appId);
-        if (!response.ok || !app) throw new Error('Uygulama bulunamadı.');
+        let app = null;
+        const staticUrl = `${getSiteBasePath()}/db/apps/${encodeURIComponent(appId)}.json`;
+
+        try {
+            const staticResponse = await fetch(staticUrl, { cache: 'no-store' });
+            if (staticResponse.ok) {
+                app = await staticResponse.json();
+            }
+        } catch (error) {
+            app = null;
+        }
+
+        if (!app) {
+            const apiResponse = await fetch('http://localhost:3000/api/apps');
+            const data = await apiResponse.json();
+            app = data.apps?.find((item) => item.id === appId) || null;
+            if (!apiResponse.ok || !app) throw new Error('Uygulama bulunamadı.');
+        }
 
         document.title = `${app.title} | T.U App Store`;
         const downloadMarkup = app.status === 'coming-soon'
