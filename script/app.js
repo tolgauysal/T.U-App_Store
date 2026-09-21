@@ -4,6 +4,18 @@ function escapeHtml(value) {
     return element.innerHTML;
 }
 
+function getSiteBasePath() {
+    const pathname = window.location.pathname || '/';
+    return pathname.includes('/T.U-App_Store/') ? '/T.U-App_Store' : '';
+}
+
+function resolveAssetUrl(url) {
+    if (!url) return '';
+    if (/^https?:\/\//i.test(url) || /^data:/i.test(url) || /^mailto:/i.test(url)) return url;
+    const normalizedPath = String(url).replace(/^\/+/, '');
+    return `${getSiteBasePath()}/${normalizedPath}`;
+}
+
 function getAppId() {
     const segments = window.location.pathname.split('/').filter(Boolean);
     return decodeURIComponent(segments.at(-1) || '');
@@ -23,12 +35,12 @@ async function loadAppDetail() {
         const downloadMarkup = app.status === 'coming-soon'
             ? '<button class="download-button is-disabled" type="button" disabled>Yakında yayınla</button>'
             : app.downloadUrl
-            ? `<a class="download-button" href="${escapeHtml(app.downloadUrl)}" download>Uygulamayı indir</a>`
+            ? `<a class="download-button" href="${escapeHtml(resolveAssetUrl(app.downloadUrl))}" download>Uygulamayı indir</a>`
             : '<button class="download-button is-disabled" type="button" disabled>Dosya bekleniyor</button>';
 
         container.innerHTML = `
             <div class="app-detail-card">
-                ${app.logoUrl ? `<img class="app-detail-logo" src="${escapeHtml(app.logoUrl)}" alt="${escapeHtml(app.title)} logosu">` : ''}
+                ${app.logoUrl ? `<img class="app-detail-logo" src="${resolveAssetUrl(app.logoUrl)}" alt="${escapeHtml(app.title)} logosu">` : ''}
                 <span class="app-kicker">${escapeHtml(app.platform || 'Android')} · ${escapeHtml(app.category || 'Uygulama')}</span>
                 <h1>${escapeHtml(app.title)}</h1>
                 <p class="app-description">${escapeHtml(app.description || 'Bu uygulama için açıklama eklenmemiş.')}</p>

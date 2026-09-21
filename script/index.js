@@ -143,7 +143,7 @@ function renderApps(apps) {
             .replace(/^-|-$/g, '');
         el.href = `/app/${slug}/${encodeURIComponent(a.id)}`;
         el.innerHTML = `
-            ${a.logoUrl ? `<img class="app-logo" src="${sanitizeInput(a.logoUrl)}" alt="${sanitizeInput(a.title)} logosu">` : ''}
+            ${a.logoUrl ? `<img class="app-logo" src="${resolveAssetUrl(a.logoUrl)}" alt="${sanitizeInput(a.title)} logosu">` : ''}
             <h3>${title}</h3>
             <p>${description}</p>
             <small>${platform} · ${author} | ${category}</small>
@@ -217,6 +217,18 @@ function updateProfileAvatarDisplay(name, avatarUrl) {
         const initials = displayName.split(' ').map(p => p.charAt(0)).filter(Boolean).slice(0,2).join('').toUpperCase();
         avatarEl.textContent = initials || 'U';
     }
+}
+
+function getSiteBasePath() {
+    const pathname = window.location.pathname || '/';
+    return pathname.includes('/T.U-App_Store/') ? '/T.U-App_Store' : '';
+}
+
+function resolveAssetUrl(url) {
+    if (!url) return '';
+    if (/^https?:\/\//i.test(url) || /^data:/i.test(url) || /^mailto:/i.test(url)) return url;
+    const normalizedPath = String(url).replace(/^\/+/, '');
+    return `${getSiteBasePath()}/${normalizedPath}`;
 }
 
 function sanitizeInput(input) {
